@@ -1,0 +1,1 @@
+In this project I plan to practice using Flexbox and manipulating the DOM to create something similar to a Etch-a-Sketch!
