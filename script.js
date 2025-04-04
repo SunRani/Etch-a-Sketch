@@ -1,0 +1,35 @@
+const container = document.querySelector("div");
+
+const square = document.createElement("div");
+const square2 = document.createElement("div");
+const square3 = document.createElement("div");
+const square4 = document.createElement("div");
+const square5 = document.createElement("div");
+const square6 = document.createElement("div");
+const square7 = document.createElement("div");
+const square8 = document.createElement("div");
+const square9 = document.createElement("div");
+const square10 = document.createElement("div");
+const square11 = document.createElement("div");
+const square12 = document.createElement("div");
+const square13 = document.createElement("div");
+const square14 = document.createElement("div");
+const square15 = document.createElement("div");
+const square16 = document.createElement("div");
+
+container.appendChild(square);
+container.appendChild(square2);
+container.appendChild(square3);
+container.appendChild(square4);
+container.appendChild(square5);
+container.appendChild(square6);
+container.appendChild(square7);
+container.appendChild(square8);
+container.appendChild(square9);
+container.appendChild(square10);
+container.appendChild(square11);
+container.appendChild(square12);
+container.appendChild(square13);
+container.appendChild(square14);
+container.appendChild(square15);
+container.appendChild(square16);
