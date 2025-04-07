@@ -6,6 +6,27 @@ function createPixel() {
     container.appendChild(pixel);
 }
 
+function createPixelBoard(length, width) {
+    const pixel = document.createElement("div");
+    pixel.style.width = `${length}%`;
+    pixel.style.height = `${width}%`;
+    
+    let hue = Math.floor(Math.random() * 361);
+    let saturation = Math.floor((Math.random() * 100) + 1);
+    let brightness = Math.floor((Math.random() * 100) + 1);
+
+    pixel.addEventListener("mouseenter", () => {
+        pixel.style.backgroundColor = "red";
+    })
+
+    pixel.addEventListener("mouseleave", () => {
+        pixel.style.backgroundColor = "white";
+    })
+    
+     
+    container.appendChild(pixel);
+}
+
 for (let i = 0; i < 36; i++) {
     createPixel();
 }
@@ -23,13 +44,9 @@ function changePixelBoard() {
     while (container.hasChildNodes()) {
         container.removeChild(container.firstChild);
     }
-
-    container.div.style.backgroundColor = "green";
-    container.div.style.width = `${newWidth}%`;
-    container.div.style.height = `${newHeight}%`;
-
+   
     for (let i = 0; i < squares * squares; i++) {
-        createPixel();
+        createPixelBoard(newWidth, newHeight);
     }
 }
 
