@@ -1,35 +1,38 @@
 const container = document.querySelector("div");
 
-const square = document.createElement("div");
-const square2 = document.createElement("div");
-const square3 = document.createElement("div");
-const square4 = document.createElement("div");
-const square5 = document.createElement("div");
-const square6 = document.createElement("div");
-const square7 = document.createElement("div");
-const square8 = document.createElement("div");
-const square9 = document.createElement("div");
-const square10 = document.createElement("div");
-const square11 = document.createElement("div");
-const square12 = document.createElement("div");
-const square13 = document.createElement("div");
-const square14 = document.createElement("div");
-const square15 = document.createElement("div");
-const square16 = document.createElement("div");
+function createPixel() {
+    const pixel = document.createElement("div");
+    pixel.classList.add("pixel");
+    container.appendChild(pixel);
+}
 
-container.appendChild(square);
-container.appendChild(square2);
-container.appendChild(square3);
-container.appendChild(square4);
-container.appendChild(square5);
-container.appendChild(square6);
-container.appendChild(square7);
-container.appendChild(square8);
-container.appendChild(square9);
-container.appendChild(square10);
-container.appendChild(square11);
-container.appendChild(square12);
-container.appendChild(square13);
-container.appendChild(square14);
-container.appendChild(square15);
-container.appendChild(square16);
+for (let i = 0; i < 36; i++) {
+    createPixel();
+}
+
+function deleteBoard( oldBoard ) {
+    const container = document.getElementById("container");
+    container.remove();
+}
+
+function changePixelBoard() {
+    const squares = prompt("How many Squares per side would you like?");
+    const newWidth = 100 / parseFloat(squares);
+    const newHeight = newWidth;
+    
+    while (container.hasChildNodes()) {
+        container.removeChild(container.firstChild);
+    }
+
+    container.div.style.backgroundColor = "green";
+    container.div.style.width = `${newWidth}%`;
+    container.div.style.height = `${newHeight}%`;
+
+    for (let i = 0; i < squares * squares; i++) {
+        createPixel();
+    }
+}
+
+const button = document.getElementById("pixelButton");
+
+button.addEventListener("click", changePixelBoard);

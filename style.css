@@ -18,11 +18,10 @@ body {
 }
 
 .container div {
-    width: 6.25%;
-    height: 6.25%;
+    width: 16.66666667%;
+    height: 16.66666667%;
 }
 
 .container div:hover {
     background-color: aqua;
-    transition: background-color 0.25s;
 }
