@@ -1,11 +1,19 @@
+//Creates original board
 const container = document.querySelector("div");
 
-function createPixel() {
+function createDefault() {
     const pixel = document.createElement("div");
     pixel.classList.add("pixel");
     container.appendChild(pixel);
+    pixel.addEventListener("mouseover", () => {
+        pixel.style.backgroundColor = pixel.style.backgroundColor = getRandomColor();;
+    })
+}
+for (let i = 0; i < 36; i++) {
+    createDefault();
 }
 
+//Creates new board with user specified pixels
 function createPixelBoard(length, width) {
     const pixel = document.createElement("div");
     pixel.style.width = `${length}%`;
@@ -15,21 +23,14 @@ function createPixelBoard(length, width) {
     let saturation = Math.floor((Math.random() * 100) + 1);
     let brightness = Math.floor((Math.random() * 100) + 1);
 
-    pixel.addEventListener("mouseenter", () => {
-        pixel.style.backgroundColor = "red";
+    pixel.addEventListener("mouseover", () => {
+        pixel.style.backgroundColor = getRandomColor();
     })
 
-    pixel.addEventListener("mouseleave", () => {
-        pixel.style.backgroundColor = "white";
-    })
     
-     
     container.appendChild(pixel);
 }
 
-for (let i = 0; i < 36; i++) {
-    createPixel();
-}
 
 function deleteBoard( oldBoard ) {
     const container = document.getElementById("container");
@@ -49,6 +50,15 @@ function changePixelBoard() {
         createPixelBoard(newWidth, newHeight);
     }
 }
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
 
 const button = document.getElementById("pixelButton");
 
